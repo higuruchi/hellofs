@@ -2,6 +2,7 @@
 #include <linux/time.h>
 #include <linux/mm.h>
 #include <linux/fs.h>
+#include <linux/string.h>
 
 static const struct super_operations ramfs_ops = {
 	.statfs		= simple_statfs,
@@ -27,11 +28,9 @@ ssize_t hellofs_read(struct file *filp, char __user *buf, size_t len, loff_t *pp
 	char read_str[] = "HelloWorld";
 	size_t size = len > 10 ? 10 : len, i;
 	
-	for (i = 0; i < size; i += 1) {
-		buf[i] = read_str[i];
-	}
-
+	strncpy(buf, read_str, size);
 	*ppos = size;
+
 	return size;
 }
 
