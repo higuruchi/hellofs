@@ -26,8 +26,9 @@ const struct file_operations hellofs_file_operations = {
 ssize_t hellofs_read(struct file *filp, char __user *buf, size_t len, loff_t *ppos)
 {
 	char read_str[] = "HelloWorld";
-	size_t size = len > 10 ? 10 : len, i;
-	
+	size_t read_str_len = strlen(read_str),
+		   size = len > read_str_len ? read_str_len : len;
+
 	strncpy(buf, read_str, size);
 	*ppos = size;
 
@@ -140,6 +141,6 @@ static int __init init_hellofs_fs(void)
 static void __exit exit_ramfs_fs(void)
 {}
 
-module_init(init_ramfs_fs)
-module_exit(exit_ramfs_fs)
+module_init(init_hellofs_fs)
+module_exit(exit_hellofs_fs)
 
