@@ -1,4 +1,4 @@
-SUBDIRS = fs
+SUBDIRS = hellofs
 
 .PHONY: subdirs $(SUBDIRS)
 
