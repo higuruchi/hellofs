@@ -6,6 +6,19 @@ A local file system where the string HelloWorld is read every time the read syst
 
 - Ubuntu == 10.04
 
+## Build
+
+```
+$ make
+```
+
+## Install
+
+```
+$ sudo make install
+
+```
+
 ## Demo
 
 <div align="center">
