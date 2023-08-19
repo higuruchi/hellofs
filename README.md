@@ -5,6 +5,7 @@ A local file system where the string HelloWorld is read every time the read syst
 ## Requirement
 
 - Ubuntu == 10.04
+- Linux Kernel == 2.6.32.x
 
 ## Build
 
@@ -16,7 +17,7 @@ $ make
 
 ```
 $ sudo make install
-
+$ sudo make load
 ```
 
 ## Demo
