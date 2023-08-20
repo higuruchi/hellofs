@@ -32,7 +32,8 @@ uninstall: unload
 	/sbin/depmod $(KVER) -A
 
 load:
-	insmod $(MDIR)/hellofs.ko
+	depmod -a
+	modprobe -v hellofs
 
 unload:
 	@test "`uname -r`" != "$(KVER)" || \
